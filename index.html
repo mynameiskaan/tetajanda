@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kaan</title>
+    <script>
+	 document.addEventListener('deviceready', function () {
+  // Enable to debug issues.
+  // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+  
+  var notificationOpenedCallback = function(jsonData) {
+    console.log('notificationOpenedCallback: ' + JSON.stringify(jsonData));
+  };
+
+  window.plugins.OneSignal
+    .startInit(46c6808c-6008-45aa-8688-87375d4e43d8)
+    .handleNotificationReceived(function(jsonData) {
+    alert("Notification received:\n" + JSON.stringify(jsonData));
+    console.log('Did I receive a notification: ' + JSON.stringify(jsonData));
+  })
+  .endInit();
+    .endInit();
+  
+  // Call syncHashedEmail anywhere in your app if you have the user's email.
+  // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+  // window.plugins.OneSignal.syncHashedEmail(userEmail);
+}, false); 
+	  </script>
+  </head>
+  <body>
+
+	<p style="margin: auto; height: 50px; width: 100%; text-align: center">Loading...asdsad.</p>
+  	
+  	
+
+  </body>
+</html>
